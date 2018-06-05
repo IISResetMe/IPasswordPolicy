@@ -28,7 +28,8 @@ class UserAccount
             }
         }
 
-        New-ADUser -Name $this.Name -AccountPassword ($this.Password |ConvertTo-SecureString -AsPlainText -Force) -SamAccountName ($this.Name -replace '[^\.\w]')
+        # # This is where we would go ahead and actually create the user
+        # New-ADUser -Name $this.Name -AccountPassword ($this.Password |ConvertTo-SecureString -AsPlainText -Force) -SamAccountName ($this.Name -replace '[^\.\w]')
 
         if($?){
             Write-Host "User created successfully!" -ForegroundColor Green
